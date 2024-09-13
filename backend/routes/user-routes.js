@@ -10,7 +10,7 @@ router.get("/getAll", userController.getAllUsers);
 
 router.post("/signup", signupValidator, userController.signup);
 router.post("/login", loginValidator, userController.login);
-router.get("/logout", userController.logout);
+router.get("/logout", verifyToken, userController.logout);
 router.get("/auth-status", verifyToken, userController.verifyUser);
 
 module.exports = router;
