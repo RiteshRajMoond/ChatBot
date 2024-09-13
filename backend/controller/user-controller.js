@@ -103,9 +103,7 @@ exports.login = async (req, res, next) => {
 };
 
 exports.logout = async (req, res, next) => {
-  try {
-    console.log("Here is the ID :", res.locals.jwtData.id);
-    
+  try {    
     const user = await User.findById(res.locals.jwtData.id);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
