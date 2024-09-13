@@ -1,0 +1,22 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #05101c;
+  color: white;
+  font-family: sans-serif
+}
+
+.image-inverted {
+  filter: invert(0);
+}
+
+.navlink {
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+}
