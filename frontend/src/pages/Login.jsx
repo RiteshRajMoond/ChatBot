@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import CustomisedInput from "../components/shared/CustomisedInput";
 import { CgLogIn } from "react-icons/cg";
@@ -18,12 +18,15 @@ const Login = () => {
       toast.loading("Logging In...", { id: "login" });
       await auth.login(email, password);
       toast.success("Logged In Successfully", { id: "login" });
-      navigate("/");
     } catch (error) {
       toast.error("Login Failed", { id: "login" });
       console.error(error);
     }
   };
+
+  useEffect(() => {
+    if (auth.user && auth.isLogged) return navigate("/chat");
+  });
 
   return (
     <Box width={"100%"} height={"100%"} display="flex" flex={1}>
