@@ -1,5 +1,13 @@
 import axios from "axios";
 
+export const signupUser = async (name, email, password) => {
+  const res = await axios.post('/users/signup', {name, email, password});
+  if(res.status !== 201) throw new Error('Signup Failed!');
+
+  const data = res.data;
+  return data;
+}
+
 export const loginUser = async (email, password) => {
   const res = await axios.post("/users/login", { email, password });
   if (res.status !== 200) throw new Error("Login Failed");

@@ -89,7 +89,7 @@ exports.generateChatCompletion = async (req, res, next) => {
     for await (const chunk of inference.chatCompletionStream({
       model: process.env.HUGGING_FACE_MODEL,
       messages: chats,
-      max_tokens: 500,
+      max_tokens: 250,
     })) {
       assistantResponse += chunk.choices[0].delta.content;
     }
