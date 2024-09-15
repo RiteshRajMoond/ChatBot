@@ -113,7 +113,7 @@ exports.fetchChats = async (req, res, next) => {
       return res.status(401).json({ message: "Unauthorized!" });
     return res.status(200).json({ chats: user.chats });
   } catch (error) {
-    return res.stauts(500).json({ message: error.message });
+    return res.status(500).json({ message: error.message });
   }
 };
 
