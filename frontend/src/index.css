@@ -10,6 +10,10 @@ html, body {
   filter: invert(0);
 }
 
+.image-inverted2 {
+  filter: invert(100%);
+}
+
 .navlink {
   font-weight: 600;
   text-transform: uppercase;
@@ -19,4 +23,17 @@ html, body {
   padding: 8px 20px;
   border-radius: 10px;
   letter-spacing: 1px;
+}
+
+.rotate {
+  animation: rotation 4s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(359deg);
+  }
 }

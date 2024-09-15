@@ -20,7 +20,7 @@ const Signup = () => {
       await auth.signup(name, email, password);
       toast.success("Signed Up", { id: "signup" });
     } catch (error) {
-      toast.error("Login Failed", { id: "signup" });
+      toast.error("Signup Failed", { id: "signup" });
       console.error(error);
     }
   };
