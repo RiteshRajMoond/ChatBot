@@ -4,11 +4,13 @@ const TypeAnim = () => {
   return (
     <TypeAnimation
       sequence={[
-        "Chat with you own AI🤖",
+        "Welcome to your personal AI assistant! 🤖",
         1000,
-        "Built with HuggingFace Models🤗🤗",
+        "Powered by advanced HuggingFace models! 🤗",
         2000,
-        "Customised specially for You!👉🏼👉🏼",
+        "Tailored to meet your unique needs! 🌟",
+        1500,
+        "Let's start an amazing conversation! 💬",
         1500,
       ]}
       speed={50}
