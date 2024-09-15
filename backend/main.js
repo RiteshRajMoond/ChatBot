@@ -31,7 +31,7 @@ app.use("/api/chat", chatRoutes);
 
 
 db().then(() => {
-  app.listen(9090, () => {
+  app.listen(process.env.PORT || 9090, () => {
     console.log("Server is running on http://localhost:9090");
   });
 });
