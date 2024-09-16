@@ -14,10 +14,7 @@ const chatRoutes = require("./routes/chat-routes");
 const app = express();
 
 // Determine allowed origin based on environment
-const allowedOrigin =
-  process.env.NODE_ENV === "production"
-    ? process.env.PRODUCTION_URL
-    : "http://localhost:5173";
+const allowedOrigin = process.env.PRODUCTION_URL
 
 // middlewares
 app.use(
