@@ -19,6 +19,9 @@ const allowedOrigin =
     ? process.env.PRODUCTION_URL
     : "http://localhost:5173";
 
+// Delete this 
+console.log(allowedOrigin);
+
 // middlewares
 app.use(
   cors({
