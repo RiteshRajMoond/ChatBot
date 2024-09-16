@@ -34,13 +34,12 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // routes    
-
-app.get("/", (req, res) => {
-  res.send("Welcome to the API");
-});
-
 app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
+
+app.use("/", (req, res) => {
+  res.send("Welcome to the API");
+});
 
 db().then(() => {
   app.listen(process.env.PORT || 9090, () => {
