@@ -44,6 +44,7 @@ exports.signup = async (req, res, next) => {
       httpOnly: true,
       signed: true,
       secure: true,
+      sameSite: "None",
     });
 
     return res
@@ -80,6 +81,7 @@ exports.login = async (req, res, next) => {
       httpOnly: true,
       signed: true,
       secure: true,
+      sameSite: "None",
     });
 
     const token = generateToken(user._id.toString(), user.email);
@@ -93,6 +95,7 @@ exports.login = async (req, res, next) => {
       httpOnly: true,
       signed: true,
       secure: true,
+      sameSite: "None",
     });
 
     return res.status(200).json({
@@ -122,6 +125,7 @@ exports.logout = async (req, res, next) => {
       httpOnly: true,
       signed: true,
       secure: true,
+      sameSite: "None",
     });
 
     return res.status(200).json({ message: "Logged out successfully" });
