@@ -43,6 +43,7 @@ exports.signup = async (req, res, next) => {
       expires,
       httpOnly: true,
       signed: true,
+      secure: true,
     });
 
     return res
@@ -78,6 +79,7 @@ exports.login = async (req, res, next) => {
       domain: process.env.BACKEND_DOMAIN,
       httpOnly: true,
       signed: true,
+      secure: true,
     });
 
     const token = generateToken(user._id.toString(), user.email);
@@ -90,6 +92,7 @@ exports.login = async (req, res, next) => {
       expires,
       httpOnly: true,
       signed: true,
+      secure: true,
     });
 
     return res.status(200).json({
@@ -118,6 +121,7 @@ exports.logout = async (req, res, next) => {
       domain: process.env.BACKEND_DOMAIN,
       httpOnly: true,
       signed: true,
+      secure: true,
     });
 
     return res.status(200).json({ message: "Logged out successfully" });
