@@ -33,7 +33,12 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(morgan("dev"));
 }
 
-// routes     
+// routes    
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the API");
+});
+
 app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
 
