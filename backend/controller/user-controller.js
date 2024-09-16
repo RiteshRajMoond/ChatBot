@@ -3,6 +3,7 @@ const User = require("../models/User");
 const { validationResult } = require("express-validator");
 const { generateToken } = require("../utils/token-manager");
 const { COOKIE_NAME } = require("../utils/constants");
+require("dotenv").config();
 
 exports.getAllUsers = async (req, res, next) => {
   try {
@@ -38,7 +39,7 @@ exports.signup = async (req, res, next) => {
 
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "localhost",
+      domain: process.env.BACKEND_DOMAIN,
       expires,
       httpOnly: true,
       signed: true,
@@ -74,7 +75,7 @@ exports.login = async (req, res, next) => {
 
     res.clearCookie(COOKIE_NAME, {
       path: "/",
-      domain: "localhost",
+      domain: process.env.BACKEND_DOMAIN,
       httpOnly: true,
       signed: true,
     });
@@ -85,7 +86,7 @@ exports.login = async (req, res, next) => {
 
     res.cookie(COOKIE_NAME, token, {
       path: "/",
-      domain: "localhost",
+      domain: process.env.BACKEND_DOMAIN,
       expires,
       httpOnly: true,
       signed: true,
@@ -103,7 +104,7 @@ exports.login = async (req, res, next) => {
 };
 
 exports.logout = async (req, res, next) => {
-  try {    
+  try {
     const user = await User.findById(res.locals.jwtData.id);
     if (!user) {
       return res.status(404).json({ message: "User not found" });
@@ -114,7 +115,7 @@ exports.logout = async (req, res, next) => {
 
     res.clearCookie(COOKIE_NAME, {
       path: "/",
-      domain: "localhost",
+      domain: process.env.BACKEND_DOMAIN,
       httpOnly: true,
       signed: true,
     });
