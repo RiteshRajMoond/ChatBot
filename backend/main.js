@@ -16,6 +16,9 @@ const app = express();
 // Determine allowed origin based on environment
 const allowedOrigin = process.env.PRODUCTION_URL
 
+// Delete this 
+console.log(allowedOrigin);
+
 // middlewares
 app.use(
   cors({
