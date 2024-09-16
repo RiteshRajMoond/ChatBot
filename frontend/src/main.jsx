@@ -8,7 +8,12 @@ import { AuthProvider } from "./context/AuthContext.jsx";
 import { Toaster } from "react-hot-toast";
 import axios from "axios";
 
+<<<<<<< HEAD
 axios.defaults.baseURL = `${import.meta.env.VITE_REACT_APP_BASE_URI}/api`;
+=======
+axios.defaults.baseURL =
+  (import.meta.env.VITE_REACT_APP_BASE_URI || "http://localhost:9090") + "/api";
+>>>>>>> f4bc61627c1b83015aa3cbaa8cc433cd307164e7
 axios.defaults.withCredentials = true; // This is important for the cookie to be sent to the server
 
 const theme = createTheme({

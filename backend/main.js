@@ -36,9 +36,13 @@ if (process.env.NODE_ENV !== "production") {
   app.use(morgan("dev"));
 }
 
-// routes
+// routes    
 app.use("/api/users", userRoutes);
 app.use("/api/chat", chatRoutes);
+
+app.use("/", (req, res) => {
+  res.send("Welcome to the API");
+});
 
 db().then(() => {
   app.listen(process.env.PORT || 9090, () => {
