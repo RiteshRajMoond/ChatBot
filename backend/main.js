@@ -32,9 +32,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // Use Morgan only in development
-if (process.env.NODE_ENV !== "production") {
-  app.use(morgan("dev"));
-}
+// if (process.env.NODE_ENV !== "production") {
+//   app.use(morgan("dev"));
+// }
 
 // routes    
 app.use("/api/users", userRoutes);
