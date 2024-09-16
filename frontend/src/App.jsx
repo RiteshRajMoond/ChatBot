@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Chat from "./pages/Chat";
-import NotFound from "./pages/NotFound";
+import NotFound from "./pages/Notfound";
 
 function App() {
   return (
